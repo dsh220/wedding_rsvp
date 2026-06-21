@@ -823,6 +823,41 @@
       .cal-btn:hover {
         border-color: #3a3530;
       }
+
+      .kr-notice {
+        display: none;
+        background: #faf9f6;
+        color: #3a3530;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        border-bottom: 1px solid #e8e2d9;
+      }
+      .kr-notice.visible {
+        display: block;
+      }
+      .kr-notice h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        margin-bottom: 1.2rem;
+      }
+      .kr-notice p {
+        font-family: "Jost", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 300;
+        line-height: 1.85;
+        color: #5a524a;
+        max-width: 520px;
+        margin: 0 auto 1.8rem;
+      }
+      .kr-notice .kr-accounts {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        font-weight: 300;
+        line-height: 2;
+        letter-spacing: 0.02em;
+      }
     </style>
   </head>
   <body>
@@ -834,6 +869,21 @@
         <a onclick="scrollToSection('gallery')">Gallery</a>
         <a onclick="showRSVP()">RSVP</a>
       </nav>
+
+      <div class="kr-notice" id="kr-notice">
+        <h2>함께하지 못해 죄송합니다</h2>
+        <p>
+          사정상 미국에서 예식을 진행하게 되었습니다. 함께하지 못하게 된 점
+          진심으로 양해 부탁드립니다. 마음을 전하고 싶으신 분들을 위해 아래
+          계좌번호를 안내드립니다.
+        </p>
+        <div class="kr-accounts">
+          <div>신랑 아버지: 000-0000-0000</div>
+          <div>신랑 어머니: 000-0000-0000</div>
+          <div>신부 아버지: 000-0000-0000</div>
+          <div>신부 어머니: 000-0000-0000</div>
+        </div>
+      </div>
 
       <section class="hero">
         <div class="hero-names">
@@ -1269,6 +1319,17 @@
           shiftLightbox(dx < 0 ? 1 : -1);
         }
       });
+
+      fetch("https://ipapi.co/json/")
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          if (data.country_code === "KR") {
+            document.getElementById("kr-notice").classList.add("visible");
+          }
+        })
+        .catch(function () {});
 
       function downloadICS() {
         var ics = [
