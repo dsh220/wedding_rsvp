@@ -43,6 +43,11 @@
         padding: 0;
         box-sizing: border-box;
       }
+      a {
+        color: inherit;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
       body {
         background: #faf9f6;
         color: #3a3530;
@@ -1040,7 +1045,7 @@
         <a onclick="showRSVP()">RSVP</a>
       </nav>
 
-      <div class="kr-notice" id="kr-notice">
+      <div class="kr-notice visible" id="kr-notice">
         <div class="kr-notice-heading">
           <h2>함께하지 못해 죄송합니다.</h2>
           <p>
@@ -1718,15 +1723,11 @@
           shiftLightbox(dx < 0 ? 1 : -1);
       });
 
-      fetch("https://ipapi.co/json/")
-        .then(function (res) {
-          return res.json();
-        })
-        .then(function (data) {
-          if (data.country_code === "KR")
-            document.getElementById("kr-notice").classList.add("visible");
-        })
-        .catch(function () {});
+      // 실제 배포 시 아래 주석을 해제하고 위의 classList.add("visible") 줄을 제거하세요
+      // fetch("https://ipapi.co/json/")
+      //   .then(function(res) { return res.json(); })
+      //   .then(function(data) { if (data.country_code === "KR") document.getElementById("kr-notice").classList.add("visible"); })
+      //   .catch(function() {});
 
       function downloadICS() {
         var ics = [
