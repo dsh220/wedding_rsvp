@@ -894,9 +894,17 @@
         font-weight: 400;
         color: #3a3530;
         transition: background 0.2s;
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
       }
       .kr-acc-toggle:hover {
         background: #f4f1ea;
+      }
+      .kr-acc-toggle:focus {
+        background: #faf9f6;
+      }
+      .kr-acc-group.open .kr-acc-toggle {
+        background: #faf9f6;
       }
       .kr-acc-arrow {
         color: #b09e8e;
@@ -1014,7 +1022,7 @@
         background: #3a3530;
         color: #faf9f6;
         font-family: "Noto Serif KR", serif;
-        font-size: 0.68rem;
+        font-size: 0.85rem;
         letter-spacing: 0.02em;
         padding: 0.8rem 1.6rem;
         border-radius: 30px;
