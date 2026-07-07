@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -453,6 +453,7 @@
           grid-template-columns: repeat(2, 1fr);
         }
       }
+
       @keyframes shimmer {
         0% {
           background-position: -600px 0;
@@ -476,7 +477,9 @@
         animation: shimmer 1.4s infinite;
         opacity: 0;
         transform: translateY(24px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
       }
       .gallery-item.visible {
         opacity: 1;
@@ -486,7 +489,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease, opacity 0.4s ease;
+        transition:
+          transform 0.5s ease,
+          opacity 0.4s ease;
         display: block;
         opacity: 0;
       }
@@ -608,11 +613,6 @@
         font-size: 1.35rem;
         font-weight: 300;
         letter-spacing: 0.04em;
-      }
-      .registry-card p {
-        font-size: 0.78rem;
-        color: #7a6f65;
-        line-height: 1.7;
       }
       .reg-link {
         font-family: "Jost", sans-serif;
@@ -828,87 +828,210 @@
         border-color: #3a3530;
       }
 
+      /* KOREAN NOTICE */
       .kr-notice {
         display: none;
         background: #faf9f6;
-        padding: 2.5rem 1.5rem 3rem;
+        padding: 3rem 1.5rem;
       }
       .kr-notice.visible {
         display: block;
       }
-      .kr-notice-card {
-        max-width: 560px;
-        margin: 0 auto;
-        background: #faf9f6;
-        border: 1px solid #c9b99a;
-        box-shadow: 0 4px 24px rgba(58, 53, 48, 0.08),
-          0 1px 4px rgba(58, 53, 48, 0.04);
-        padding: 6px;
-      }
-      .kr-notice-inner {
-        border: 1px solid #c9b99a;
-        padding: 48px 40px;
+      .kr-notice-heading {
         text-align: center;
+        margin-bottom: 2.5rem;
       }
-      .kr-notice h2 {
+      .kr-notice-heading h2 {
         font-family: "Noto Serif KR", serif;
         font-size: 1.5rem;
         font-weight: 300;
         letter-spacing: 0.08em;
         color: #3a3530;
         margin-bottom: 2rem;
+        word-break: keep-all;
+        line-height: 1.5;
       }
-      .kr-notice p {
+      .kr-notice-heading p {
         font-family: "Noto Serif KR", serif;
         font-size: 0.9rem;
         font-weight: 300;
         line-height: 1.9;
         color: #5a5350;
-        margin-bottom: 2.5rem;
+        word-break: keep-all;
+        max-width: 400px;
+        margin: 0 auto;
       }
-      .kr-notice-divider {
-        border: none;
-        border-top: 1px solid #c9b99a;
-        width: 48px;
-        margin: 0 auto 2.5rem;
-      }
-      .kr-accounts-heading {
-        font-family: "Noto Serif KR", serif;
-        font-size: 0.72rem;
-        font-weight: 400;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #7a6f65;
-        margin-bottom: 1.8rem;
-      }
-      .kr-accounts {
+
+      .kr-accordion {
+        max-width: 480px;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 0.85rem;
+        gap: 0.9rem;
       }
-      .kr-account-row {
+      .kr-acc-group {
+        border: 1px solid #e0d6c4;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #faf9f6;
+      }
+      .kr-acc-toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.15rem 1.4rem;
+        background: #faf9f6;
+        border: none;
+        cursor: pointer;
         font-family: "Noto Serif KR", serif;
-        font-size: 0.9rem;
-        line-height: 1.6;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #3a3530;
+        transition: background 0.2s;
       }
-      .kr-account-label {
+      .kr-acc-toggle:hover {
+        background: #f4f1ea;
+      }
+      .kr-acc-arrow {
+        color: #b09e8e;
+        transition: transform 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+      }
+      .kr-acc-arrow svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        fill: none;
+      }
+      .kr-acc-group.open .kr-acc-arrow {
+        transform: rotate(180deg);
+      }
+      .kr-acc-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        background: #f4f1ea;
+      }
+      .kr-acc-group.open .kr-acc-body {
+        max-height: 800px;
+      }
+      .kr-acc-inner {
+        padding: 1rem 1rem 1.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .kr-acct-card {
+        background: #faf9f6;
+        border: 1px solid #e8e2d9;
+        border-radius: 10px;
+        padding: 1.2rem 1.3rem;
+      }
+      .kr-acct-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+      .kr-acct-role {
+        font-family: "Noto Serif KR", serif;
+        font-size: 0.85rem;
+        font-weight: 300;
+        color: #7a6f65;
+      }
+      .kr-acct-name {
+        font-family: "Noto Serif KR", serif;
+        font-size: 0.95rem;
         font-weight: 400;
         color: #3a3530;
       }
-      .kr-account-label::after {
-        content: ": ";
+      .kr-acct-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #f4f1ea;
+        border-radius: 8px;
+        padding: 0.7rem 0.9rem;
+      }
+      .kr-acct-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+      .kr-acct-bank {
+        font-family: "Noto Serif KR", serif;
+        font-size: 0.75rem;
         font-weight: 300;
+        color: #9a8f82;
+      }
+      .kr-acct-number {
+        font-family: "Noto Serif KR", serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #3a3530;
+        letter-spacing: 0.02em;
+      }
+      .kr-copy-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: #faf9f6;
+        border: 1px solid #ddd8d0;
+        border-radius: 6px;
+        padding: 0.45rem 0.7rem;
+        cursor: pointer;
+        font-family: "Noto Serif KR", serif;
+        font-size: 0.72rem;
+        color: #7a6f65;
+        transition: all 0.2s;
+        white-space: nowrap;
+      }
+      .kr-copy-btn:hover {
+        border-color: #b09e8e;
         color: #3a3530;
       }
-      .kr-account-number {
-        font-weight: 300;
-        color: #7a7370;
-        letter-spacing: 0.04em;
+      .kr-copy-btn svg {
+        width: 13px;
+        height: 13px;
+        stroke: currentColor;
+        fill: none;
+      }
+
+      /* TOAST */
+      .kr-toast {
+        position: fixed;
+        left: 50%;
+        bottom: 2.5rem;
+        transform: translateX(-50%) translateY(1rem);
+        background: #3a3530;
+        color: #faf9f6;
+        font-family: "Noto Serif KR", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+        padding: 0.8rem 1.6rem;
+        border-radius: 30px;
+        box-shadow: 0 4px 16px rgba(58, 53, 48, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+        z-index: 2000;
+      }
+      .kr-toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
       }
     </style>
   </head>
   <body>
     <div id="home-page">
+      <div class="kr-toast" id="kr-toast">
+        <span>계좌번호가 복사되었습니다</span>
+      </div>
       <nav>
         <a class="active">Home</a>
         <a onclick="scrollToSection('locations')">Venue</a>
@@ -918,32 +1041,188 @@
       </nav>
 
       <div class="kr-notice" id="kr-notice">
-        <div class="kr-notice-card">
-          <div class="kr-notice-inner">
-            <h2>함께하지 못해 죄송합니다</h2>
-            <p>
-              사정상 미국에서 예식을 진행하게 되었습니다. 함께하지 못하게 된 점
-              진심으로 양해 부탁드립니다. 마음을 전하고 싶으신 분들을 위해
-              아래 계좌번호를 안내드립니다.
-            </p>
-            <hr class="kr-notice-divider" />
-            <h3 class="kr-accounts-heading">마음 전하기</h3>
-            <div class="kr-accounts">
-              <div class="kr-account-row">
-                <span class="kr-account-label">신랑 아버지</span
-                ><span class="kr-account-number">000-0000-0000</span>
+        <div class="kr-notice-heading">
+          <h2>함께하지 못해 죄송합니다.</h2>
+          <p>
+            사정상 미국에서 예식을 진행하게 되었습니다.
+            <br />
+            함께하지 못하게 된 점 진심으로 양해 부탁드립니다.
+            <br />
+            마음을 전하고 싶으신 분들을 위해
+            <br />
+            아래 계좌번호를 안내드립니다.
+          </p>
+        </div>
+        <div class="kr-accordion">
+          <div class="kr-acc-group">
+            <button class="kr-acc-toggle" onclick="toggleAcc(this)">
+              신랑측에게
+              <span class="kr-acc-arrow">
+                <svg viewBox="0 0 24 24" stroke-width="1.5">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <div class="kr-acc-body">
+              <div class="kr-acc-inner">
+                <div class="kr-acct-card">
+                  <div class="kr-acct-top">
+                    <span class="kr-acct-role">신랑</span>
+                    <span class="kr-acct-name">한다솔</span>
+                  </div>
+                  <div class="kr-acct-bottom">
+                    <div class="kr-acct-info">
+                      <span class="kr-acct-bank">우리은행</span>
+                      <span class="kr-acct-number">1002836491944</span>
+                    </div>
+                    <button
+                      class="kr-copy-btn"
+                      onclick="copyAcct(this, '1002836491944')"
+                    >
+                      <svg viewBox="0 0 24 24" stroke-width="1.5">
+                        <rect x="9" y="9" width="11" height="11" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      복사
+                    </button>
+                  </div>
+                </div>
+                <div class="kr-acct-card">
+                  <div class="kr-acct-top">
+                    <span class="kr-acct-role">신랑 아버지</span>
+                    <span class="kr-acct-name">한성욱</span>
+                  </div>
+                  <div class="kr-acct-bottom">
+                    <div class="kr-acct-info">
+                      <span class="kr-acct-bank">국민은행</span>
+                      <span class="kr-acct-number">40912588105262</span>
+                    </div>
+                    <button
+                      class="kr-copy-btn"
+                      onclick="copyAcct(this, '40912588105262')"
+                    >
+                      <svg viewBox="0 0 24 24" stroke-width="1.5">
+                        <rect x="9" y="9" width="11" height="11" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      복사
+                    </button>
+                  </div>
+                </div>
+                <div class="kr-acct-card">
+                  <div class="kr-acct-top">
+                    <span class="kr-acct-role">신랑 어머니</span>
+                    <span class="kr-acct-name">이석영</span>
+                  </div>
+                  <div class="kr-acct-bottom">
+                    <div class="kr-acct-info">
+                      <span class="kr-acct-bank">국민은행</span>
+                      <span class="kr-acct-number">27250104025629</span>
+                    </div>
+                    <button
+                      class="kr-copy-btn"
+                      onclick="copyAcct(this, '27250104025629')"
+                    >
+                      <svg viewBox="0 0 24 24" stroke-width="1.5">
+                        <rect x="9" y="9" width="11" height="11" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      복사
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div class="kr-account-row">
-                <span class="kr-account-label">신랑 어머니</span
-                ><span class="kr-account-number">000-0000-0000</span>
-              </div>
-              <div class="kr-account-row">
-                <span class="kr-account-label">신부 아버지</span
-                ><span class="kr-account-number">000-0000-0000</span>
-              </div>
-              <div class="kr-account-row">
-                <span class="kr-account-label">신부 어머니</span
-                ><span class="kr-account-number">000-0000-0000</span>
+            </div>
+          </div>
+          <div class="kr-acc-group">
+            <button class="kr-acc-toggle" onclick="toggleAcc(this)">
+              신부측에게
+              <span class="kr-acc-arrow">
+                <svg viewBox="0 0 24 24" stroke-width="1.5">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <div class="kr-acc-body">
+              <div class="kr-acc-inner">
+                <div class="kr-acct-card">
+                  <div class="kr-acct-top">
+                    <span class="kr-acct-role">신부</span>
+                    <span class="kr-acct-name">안채린</span>
+                  </div>
+                  <div class="kr-acct-bottom">
+                    <div class="kr-acct-info">
+                      <span class="kr-acct-bank">국민은행</span>
+                      <span class="kr-acct-number">84240101810698</span>
+                    </div>
+                    <button
+                      class="kr-copy-btn"
+                      onclick="copyAcct(this, '84240101810698')"
+                    >
+                      <svg viewBox="0 0 24 24" stroke-width="1.5">
+                        <rect x="9" y="9" width="11" height="11" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      복사
+                    </button>
+                  </div>
+                </div>
+                <div class="kr-acct-card">
+                  <div class="kr-acct-top">
+                    <span class="kr-acct-role">신부 아버지</span>
+                    <span class="kr-acct-name">안상규</span>
+                  </div>
+                  <div class="kr-acct-bottom">
+                    <div class="kr-acct-info">
+                      <span class="kr-acct-bank">기업은행</span>
+                      <span class="kr-acct-number">01085471240</span>
+                    </div>
+                    <button
+                      class="kr-copy-btn"
+                      onclick="copyAcct(this, '01085471240')"
+                    >
+                      <svg viewBox="0 0 24 24" stroke-width="1.5">
+                        <rect x="9" y="9" width="11" height="11" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      복사
+                    </button>
+                  </div>
+                </div>
+                <div class="kr-acct-card">
+                  <div class="kr-acct-top">
+                    <span class="kr-acct-role">신부 어머니</span>
+                    <span class="kr-acct-name">신옥희</span>
+                  </div>
+                  <div class="kr-acct-bottom">
+                    <div class="kr-acct-info">
+                      <span class="kr-acct-bank">경남은행</span>
+                      <span class="kr-acct-number">595220156094</span>
+                    </div>
+                    <button
+                      class="kr-copy-btn"
+                      onclick="copyAcct(this, '595220156094')"
+                    >
+                      <svg viewBox="0 0 24 24" stroke-width="1.5">
+                        <rect x="9" y="9" width="11" height="11" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                      복사
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -965,23 +1244,23 @@
         </div>
         <div class="countdown" id="countdown">
           <div class="cd-unit">
-            <span class="cd-num" id="cd-days">—</span
-            ><span class="cd-label">Days</span>
+            <span class="cd-num" id="cd-days">—</span>
+            <span class="cd-label">Days</span>
           </div>
           <span class="cd-sep">·</span>
           <div class="cd-unit">
-            <span class="cd-num" id="cd-hours">—</span
-            ><span class="cd-label">Hours</span>
+            <span class="cd-num" id="cd-hours">—</span>
+            <span class="cd-label">Hours</span>
           </div>
           <span class="cd-sep">·</span>
           <div class="cd-unit">
-            <span class="cd-num" id="cd-mins">—</span
-            ><span class="cd-label">Mins</span>
+            <span class="cd-num" id="cd-mins">—</span>
+            <span class="cd-label">Mins</span>
           </div>
           <span class="cd-sep">·</span>
           <div class="cd-unit">
-            <span class="cd-num" id="cd-secs">—</span
-            ><span class="cd-label">Secs</span>
+            <span class="cd-num" id="cd-secs">—</span>
+            <span class="cd-label">Secs</span>
           </div>
         </div>
         <div class="divider"></div>
@@ -1008,8 +1287,9 @@
               class="map-link"
               href="https://maps.app.goo.gl/D1mWvqARbNYwTX2fA"
               target="_blank"
-              >Open in Google Maps</a
             >
+              Open in Google Maps
+            </a>
           </div>
         </div>
         <div class="venue-map">
@@ -1063,7 +1343,7 @@
           <button
             onclick="showRSVP()"
             style="
-              font-family: 'Jost', sans-serif;
+              font-family: &quot;Jost&quot;, sans-serif;
               font-size: 0.72rem;
               letter-spacing: 0.1em;
               text-transform: uppercase;
@@ -1074,8 +1354,14 @@
               cursor: pointer;
               transition: all 0.25s;
             "
-            onmouseover="this.style.background='transparent';this.style.color='#b09e8e'"
-            onmouseout="this.style.background='#b09e8e';this.style.color='#faf9f6'"
+            onmouseover="
+              this.style.background = 'transparent';
+              this.style.color = '#b09e8e';
+            "
+            onmouseout="
+              this.style.background = '#b09e8e';
+              this.style.color = '#faf9f6';
+            "
           >
             RSVP
           </button>
@@ -1093,7 +1379,7 @@
               background: none;
               border: none;
               cursor: pointer;
-              font-family: 'Jost', sans-serif;
+              font-family: &quot;Jost&quot;, sans-serif;
               font-size: 0.72rem;
               letter-spacing: 0.08em;
               text-transform: uppercase;
@@ -1131,8 +1417,9 @@
               class="reg-link"
               href="https://www.amazon.com/wedding/guest-view/23H1ME85F53AL"
               target="_blank"
-              >View Registry →</a
             >
+              View Registry →
+            </a>
           </div>
           <div class="registry-card">
             <h3>Honeyfund</h3>
@@ -1140,8 +1427,9 @@
               class="reg-link"
               href="https://account.venmo.com/u/Dasol_Chaerin"
               target="_blank"
-              >Send via Venmo →</a
             >
+              Send via Venmo →
+            </a>
           </div>
         </div>
       </section>
@@ -1195,8 +1483,9 @@
       <div class="thankyou" id="thankyou">
         <h2>Thank you</h2>
         <p>
-          We're so glad you'll be joining us to celebrate.<br />See you on
-          October 3rd!
+          We're so glad you'll be joining us to celebrate.
+          <br />
+          See you on October 3rd!
         </p>
         <div
           style="
@@ -1228,9 +1517,16 @@
             class="cal-btn"
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dasol+%26+Chaerin%27s+Wedding&dates=20261003T233000Z/20261004T060000Z&details=Ceremony+at+4%3A30+PM&location=The+Mountain+House%2C+13808+Skyline+Blvd%2C+Woodside%2C+CA+94062"
             target="_blank"
-            >Google<br />Calendar</a
           >
-          <a class="cal-btn" onclick="downloadICS()">Apple<br />Calendar</a>
+            Google
+            <br />
+            Calendar
+          </a>
+          <a class="cal-btn" onclick="downloadICS()">
+            Apple
+            <br />
+            Calendar
+          </a>
         </div>
         <div
           style="
@@ -1240,9 +1536,9 @@
             margin: 0.5rem auto;
           "
         ></div>
-        <span class="back-link" style="align-self: center" onclick="showHome()"
-          >← Back to home</span
-        >
+        <span class="back-link" style="align-self: center" onclick="showHome()">
+          ← Back to home
+        </span>
       </div>
     </div>
 
@@ -1252,7 +1548,46 @@
         return "./gallery/photo" + (i + 1) + ".jpg";
       });
 
-      // Gallery grid — 6 random photos
+      // Korean account accordion
+      function toggleAcc(btn) {
+        btn.parentElement.classList.toggle("open");
+      }
+      var toastTimer = null;
+      function showToast() {
+        var toast = document.getElementById("kr-toast");
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.remove("show");
+        }, 2000);
+      }
+      function copyAcct(btn, number) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard
+            .writeText(number)
+            .then(showToast)
+            .catch(function () {
+              fallbackCopy(number);
+              showToast();
+            });
+        } else {
+          fallbackCopy(number);
+          showToast();
+        }
+      }
+      function fallbackCopy(text) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+        } catch (e) {}
+        document.body.removeChild(ta);
+      }
+
       var grid = document.getElementById("gallery-grid");
       var shuffled = photos.slice().sort(function () {
         return Math.random() - 0.5;
@@ -1279,7 +1614,6 @@
         grid.appendChild(item);
       });
 
-      // Gallery scroll animation
       var observer = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
@@ -1289,11 +1623,12 @@
             }
           });
         },
-        { threshold: 0.1 }
+        { threshold: 0.1 },
       );
       document.querySelectorAll(".gallery-item").forEach(function (el) {
         observer.observe(el);
       });
+
       var wedding = new Date("2026-10-03T12:00:00");
       function tick() {
         var diff = wedding - new Date();
@@ -1309,15 +1644,15 @@
         document.getElementById("cd-days").textContent = d;
         document.getElementById("cd-hours").textContent = String(h).padStart(
           2,
-          "0"
+          "0",
         );
         document.getElementById("cd-mins").textContent = String(m).padStart(
           2,
-          "0"
+          "0",
         );
         document.getElementById("cd-secs").textContent = String(s).padStart(
           2,
-          "0"
+          "0",
         );
       }
       tick();
@@ -1364,8 +1699,8 @@
       });
 
       var lightboxEl = document.getElementById("lightbox");
-      var touchStartX = 0;
-      var touchStartY = 0;
+      var touchStartX = 0,
+        touchStartY = 0;
       lightboxEl.addEventListener(
         "touchstart",
         function (e) {
@@ -1373,16 +1708,14 @@
           touchStartX = e.touches[0].clientX;
           touchStartY = e.touches[0].clientY;
         },
-        { passive: true }
+        { passive: true },
       );
       lightboxEl.addEventListener("touchend", function (e) {
         if (!lightboxEl.classList.contains("open")) return;
-        var touch = e.changedTouches[0];
-        var dx = touch.clientX - touchStartX;
-        var dy = touch.clientY - touchStartY;
-        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+        var dx = e.changedTouches[0].clientX - touchStartX,
+          dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy))
           shiftLightbox(dx < 0 ? 1 : -1);
-        }
       });
 
       fetch("https://ipapi.co/json/")
@@ -1390,9 +1723,8 @@
           return res.json();
         })
         .then(function (data) {
-          if (data.country_code === "KR") {
+          if (data.country_code === "KR")
             document.getElementById("kr-notice").classList.add("visible");
-          }
         })
         .catch(function () {});
 
@@ -1411,7 +1743,7 @@
         ].join("\r\n");
         var a = document.createElement("a");
         a.href = URL.createObjectURL(
-          new Blob([ics], { type: "text/calendar" })
+          new Blob([ics], { type: "text/calendar" }),
         );
         a.download = "dasol-chaerin-wedding.ics";
         a.click();
@@ -1443,7 +1775,7 @@
             mode: "no-cors",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
-          }
+          },
         )
           .then(function () {
             document.getElementById("rsvp-form").style.display = "none";
