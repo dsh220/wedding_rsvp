@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="October 3rd, 2026 · The Mountain House, Woodside, CA · Ceremony at 4:30 PM"
+    />
+    <title>Dasol & Chaerin Wedding</title>
+    <meta property="og:title" content="Dasol & Chaerin Wedding" />
+    <meta
+      property="og:description"
+      content="October 3rd, 2026 · The Mountain House, Woodside, CA · Ceremony at 4:30 PM"
+    />
+    <meta
+      property="og:image"
+      content="https://dsh220.github.io/wedding_rsvp/hero.jpg"
+    />
+    <meta property="og:url" content="https://dsh220.github.io/wedding_rsvp/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dasol & Chaerin Wedding" />
+    <meta
+      name="twitter:description"
+      content="October 3rd, 2026 · The Mountain House, Woodside, CA · Ceremony at 4:30 PM"
+    />
+    <meta
+      name="twitter:image"
+      content="https://dsh220.github.io/wedding_rsvp/hero.jpg"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+      body { background: #faf9f6; color: #3a3530; font-family: "Jost", sans-serif; font-weight: 300; }
+
+      nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.4rem 1.6rem; padding: 1.2rem 1rem; border-bottom: 1px solid #e8e2d9; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; background: #faf9f6; position: sticky; top: 0; z-index: 100; }
+      nav a { text-decoration: none; color: #3a3530; opacity: 0.65; transition: opacity 0.2s; padding: 0.2rem 0; cursor: pointer; }
+      nav a:hover, nav a.active { opacity: 1; border-bottom: 1px solid #3a3530; }
+
+      .hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-height: calc(100vh - 48px); padding: 0 1.5rem 3rem; overflow: hidden; text-align: center; background: url("./hero.jpg") center center/cover no-repeat; }
+      .hero * { color: #fff !important; }
+      .hero::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+      @media (max-width: 600px) { .hero { background: url("./hero-mobile.jpg") center center/cover no-repeat; } }
+
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+      .hero-names { margin-bottom: 2rem; position: relative; z-index: 1; opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.3s; }
+      .date-venue { position: relative; z-index: 1; margin-bottom: 2.2rem; opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.6s; }
+      .countdown { display: flex; gap: clamp(0.8rem,3vw,2rem); justify-content: center; position: relative; z-index: 1; opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.9s; }
+      .divider { width: 36px; height: 1px; background: rgba(255,255,255,0.5); margin: 2rem auto; position: relative; z-index: 1; opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 1.1s; }
+      .hero-message { position: relative; z-index: 1; opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 1.3s; font-family: "Cormorant Garamond", serif; font-style: italic; font-size: clamp(1.1rem,3.5vw,1.5rem); font-weight: 300; letter-spacing: 0.02em; }
+
+      .name { font-family: "Cormorant Garamond", serif; font-size: clamp(2rem,7vw,3.4rem); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.1; }
+      .and { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: clamp(1rem,3vw,1.3rem); margin: 0.5rem 0; display: block; }
+      .date { font-family: "Cormorant Garamond", serif; font-size: clamp(1.2rem,4vw,1.6rem); font-weight: 300; margin-bottom: 0.3rem; }
+      .venue { font-size: clamp(0.68rem,2vw,0.82rem); letter-spacing: 0.06em; text-transform: uppercase; }
+      .cd-unit { text-align: center; min-width: 44px; }
+      .cd-num { font-family: "Cormorant Garamond", serif; font-size: clamp(2rem,7vw,2.8rem); font-weight: 300; line-height: 1; display: block; }
+      .cd-label { font-size: clamp(0.58rem,1.8vw,0.68rem); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+      .cd-sep { font-family: "Cormorant Garamond", serif; font-size: clamp(1.6rem,5vw,2.2rem); align-self: flex-start; margin-top: 3px; line-height: 1; }
+
+      /* SECTION HEADINGS */
+      .sec-eyebrow { font-family: "Cormorant Garamond", serif; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: #b09e8e; text-align: center; margin-bottom: 1rem; }
+      .sec-h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.4rem,4vw,2rem); font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; margin-bottom: 3rem; }
+
+      .locations { background: #f0eeeb; padding: 5rem 2rem; }
+      .venue-block { max-width: 560px; margin: 0 auto; text-align: center; }
+      .venue-block h3 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.4rem,4vw,2rem); font-weight: 300; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+      .venue-address { font-size: 0.85rem; color: #7a6f65; line-height: 1.8; margin-bottom: 0.4rem; }
+      .venue-map { margin-top: 1.8rem; border: 1px solid #e8e2d9; }
+      .venue-actions { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; margin-top: 1.2rem; }
+      .loc-divider { width: 24px; height: 1px; background: #c8bfb2; margin: 0.8rem auto; }
+      .map-link { display: inline-block; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: #3a3530; text-decoration: none; border-bottom: 1px solid #c8bfb2; padding-bottom: 2px; transition: border-color 0.2s; background: none; cursor: pointer; font-family: "Jost", sans-serif; }
+      .map-link:hover { border-color: #3a3530; }
+
+      .schedule { background: #faf9f6; padding: 5rem 2rem; text-align: center; }
+      .schedule-wrapper { position: relative; max-width: 680px; margin: 0 auto; }
+      .schedule-spine { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: #c8bfb2; transform: translateX(-50%); }
+      .schedule-row { display: grid; grid-template-columns: 1fr 1fr; min-height: 160px; position: relative; align-items: center; }
+      .schedule-dot { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 9px; height: 9px; border-radius: 50%; background: #b09e8e; border: 2px solid #faf9f6; z-index: 1; }
+      .sched-text { display: flex; flex-direction: column; justify-content: center; padding: 2rem 2.5rem; }
+      .schedule-row.left .sched-text { text-align: right; }
+      .schedule-row.right .sched-text { text-align: left; }
+      .sched-text h4 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.1rem,3vw,1.45rem); font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.25rem; color: #3a3530; }
+      .sched-text .sched-time { font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; color: #b09e8e; margin-bottom: 0.5rem; }
+      .sched-text p { font-size: 0.82rem; color: #7a6f65; line-height: 1.75; }
+      @media (max-width: 540px) {
+        .schedule-wrapper { padding-left: 0; }
+        .schedule-spine { left: 1rem; transform: none; }
+        .schedule-row { grid-template-columns: 1fr; }
+        .schedule-row.left .sched-text, .schedule-row.right .sched-text { text-align: left; padding: 0 1rem 2.5rem 3rem; }
+        .schedule-dot { left: 1rem; transform: translate(-50%,-50%); }
+        .schedule-row > div:empty:not(.schedule-dot) { display: none; }
+      }
+
+      /* DETAILS / GOOD TO KNOW */
+      .details { background: #f0eeeb; padding: 5rem 2rem; }
+      .details-grid { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.2rem; }
+      .detail-card { background: #faf9f6; border: 1px solid #e8e2d9; padding: 2rem 1.8rem; }
+      .detail-card h4 { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-weight: 300; letter-spacing: 0.04em; color: #3a3530; margin-bottom: 1rem; }
+      .detail-card p { font-size: 0.86rem; font-weight: 300; line-height: 1.85; color: #5a5350; margin-bottom: 0.8rem; }
+      .detail-card p:last-child { margin-bottom: 0; }
+      .detail-card .label { font-weight: 400; color: #3a3530; }
+      .detail-card a { color: #3a3530; border-bottom: 1px solid #c8bfb2; padding-bottom: 1px; }
+      .detail-card a:hover { border-color: #3a3530; }
+
+      .gallery { padding: 5rem 2rem; background: #faf9f6; }
+      .gallery-subtitle { text-align: center; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: #7a6f65; margin-bottom: 3rem; }
+      .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.6rem; max-width: 900px; margin: 0 auto; }
+      @media (max-width: 600px) { .gallery-grid { grid-template-columns: repeat(2,1fr); } }
+
+      @keyframes shimmer { 0% { background-position: -600px 0; } 100% { background-position: 600px 0; } }
+      .gallery-item { aspect-ratio: 1/1.1; overflow: hidden; cursor: pointer; position: relative; background: linear-gradient(90deg,#e8e2d9 25%,#f0eeeb 50%,#e8e2d9 75%); background-size: 600px 100%; animation: shimmer 1.4s infinite; opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+      .gallery-item.visible { opacity: 1; transform: translateY(0); }
+      .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease, opacity 0.4s ease; display: block; opacity: 0; }
+      .gallery-item img.loaded { opacity: 1; }
+      .gallery-item:hover img { transform: scale(1.04); }
+      .gallery-item .gallery-overlay { position: absolute; inset: 0; background: rgba(58,53,48,0); transition: background 0.3s; }
+      .gallery-item:hover .gallery-overlay { background: rgba(58,53,48,0.15); }
+
+      .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(20,18,16,0.92); align-items: center; justify-content: center; }
+      .lightbox.open { display: flex; }
+      .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; }
+      .lightbox-close { position: fixed; top: 1.4rem; right: 1.6rem; color: #faf9f6; font-size: 1.6rem; cursor: pointer; opacity: 0.7; line-height: 1; font-family: "Jost", sans-serif; font-weight: 300; z-index: 1000; background: none; border: none; }
+      .lightbox-close:hover { opacity: 1; }
+      .lightbox-nav { position: fixed; top: 50%; transform: translateY(-50%); color: #faf9f6; font-size: 1.4rem; cursor: pointer; opacity: 0.6; background: none; border: none; padding: 1rem; z-index: 1000; font-family: "Jost", sans-serif; }
+      .lightbox-nav:hover { opacity: 1; }
+      .lightbox-prev { left: 1rem; }
+      .lightbox-next { right: 1rem; }
+
+      .registry { background: #f0eeeb; padding: 5rem 2rem; }
+      .registry-subtitle { text-align: center; font-size: 0.78rem; color: #7a6f65; line-height: 1.8; max-width: 380px; margin: 0 auto 3rem; }
+      .registry-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.2rem; max-width: 600px; margin: 0 auto; }
+      .registry-card { background: #faf9f6; border: 1px solid #e8e2d9; padding: 2.2rem 1.8rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+      .registry-card h3 { font-family: "Cormorant Garamond", serif; font-size: 1.35rem; font-weight: 300; letter-spacing: 0.04em; }
+      .reg-link { font-family: "Jost", sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3a3530; text-decoration: none; border-bottom: 1px solid #c8bfb2; padding-bottom: 2px; transition: border-color 0.2s; margin-top: 0.4rem; }
+      .reg-link:hover { border-color: #3a3530; }
+
+      .join-banner { position: relative; background: url("./join-us.jpg") center center/cover no-repeat; padding: 6rem 2rem 4rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; overflow: hidden; min-height: 600px; }
+      .join-banner::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+      .join-banner .eyebrow { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #c8bfb2; margin-bottom: 1.2rem; position: relative; z-index: 1; }
+      .join-banner h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(2rem,6vw,3.2rem); font-weight: 300; color: #faf9f6; letter-spacing: 0.06em; position: relative; z-index: 1; }
+
+      footer { background: #f0eeeb; padding: 2.5rem 1.5rem; text-align: center; border-top: 1px solid #e8e2d9; }
+      footer .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.4rem 1.8rem; margin-bottom: 1.2rem; }
+      footer .footer-links a { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3a3530; text-decoration: none; opacity: 0.65; transition: opacity 0.2s; cursor: pointer; }
+      footer .footer-links a:hover { opacity: 1; }
+      footer p { font-size: 0.72rem; color: #7a6f65; letter-spacing: 0.08em; }
+    </style>
+  </head>
+  <body>
+    <div id="home-page">
+      <nav>
+        <a class="active">Home</a>
+        <a onclick="scrollToSection('locations')">Venue</a>
+        <a onclick="scrollToSection('schedule')">Schedule</a>
+        <a onclick="scrollToSection('details')">Details</a>
+        <a onclick="scrollToSection('gallery')">Gallery</a>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-names">
+          <div class="name">Dasol Han</div>
+          <span class="and">and</span>
+          <div class="name">Chaerin An</div>
+        </div>
+        <div class="date-venue">
+          <div class="date">Sat, October 3rd, 2026</div>
+          <div class="venue">The Mountain House &nbsp;·&nbsp; Woodside, CA</div>
+          <div class="venue" style="margin-top: 0.3rem">Ceremony at 4:30 PM</div>
+        </div>
+        <div class="countdown" id="countdown">
+          <div class="cd-unit"><span class="cd-num" id="cd-days">—</span><span class="cd-label">Days</span></div>
+          <span class="cd-sep">·</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-hours">—</span><span class="cd-label">Hours</span></div>
+          <span class="cd-sep">·</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-mins">—</span><span class="cd-label">Mins</span></div>
+          <span class="cd-sep">·</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-secs">—</span><span class="cd-label">Secs</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="hero-message">The big day is almost here.</div>
+      </section>
+
+      <section class="locations" id="locations">
+        <div class="sec-eyebrow">Venue</div>
+        <div class="venue-block">
+          <h3>The Mountain House</h3>
+          <div class="loc-divider"></div>
+          <p class="venue-address">13808 Skyline Blvd, Woodside, CA 94062</p>
+          <div class="venue-actions">
+            <a class="map-link" href="https://maps.app.goo.gl/D1mWvqARbNYwTX2fA" target="_blank">Open in Google Maps</a>
+          </div>
+        </div>
+      </section>
+
+      <div style="background: #faf9f6; padding: 2.5rem 0">
+        <div style="width: 60px; height: 1px; background: #c8bfb2; margin: 0 auto"></div>
+      </div>
+
+      <section class="schedule" id="schedule">
+        <div class="sec-eyebrow">Schedule</div>
+        <div class="schedule-wrapper">
+          <div class="schedule-spine"></div>
+          <div class="schedule-row left">
+            <div class="sched-text">
+              <h4>Ceremony</h4>
+              <div class="sched-time">4:30 PM Sharp</div>
+              <p>An outdoor ceremony on the lawn. Please arrive by 4:00 PM to find your seat and settle in.</p>
+            </div>
+            <div></div>
+            <div class="schedule-dot"></div>
+          </div>
+          <div class="schedule-row right">
+            <div></div>
+            <div class="sched-text">
+              <h4>Cocktail Hour</h4>
+              <div class="sched-time">5:30 PM</div>
+              <p>Drinks and mingling as we capture a few photos.</p>
+            </div>
+            <div class="schedule-dot"></div>
+          </div>
+          <div class="schedule-row left">
+            <div class="sched-text">
+              <h4>Dinner</h4>
+              <div class="sched-time">6:00 PM</div>
+              <p>A seated dinner together indoors — come hungry!</p>
+            </div>
+            <div></div>
+            <div class="schedule-dot"></div>
+          </div>
+          <div class="schedule-row right">
+            <div></div>
+            <div class="sched-text">
+              <h4>After Party</h4>
+              <div class="sched-time">8:00 PM</div>
+              <p>Drinks, music, and dancing to celebrate the night away.</p>
+            </div>
+            <div class="schedule-dot"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="details" id="details">
+        <div class="sec-eyebrow" style="margin-bottom: 3rem">The Details</div>
+        <div class="details-grid">
+          <div class="detail-card">
+            <h4>Dietary Restrictions</h4>
+            <p>We're finalizing our dinner menu now! If you have any food allergies or need a vegetarian option, please text or email <span class="label">Chaerin or Dasol</span> by <span class="label">September 13th</span> so our kitchen can take care of you.</p>
+          </div>
+          <div class="detail-card">
+            <h4>Dress Code</h4>
+            <p>No specific color theme — just come dressed in whatever makes you feel your best!</p>
+            <p>Our ceremony is held outdoors on a beautiful, slightly sloped grassy lawn (all other events are indoors). The ground may be soft, so stiletto heels could sink or get muddy. We suggest block heels, wedges, or flats so you can walk and dance comfortably.</p>
+          </div>
+          <div class="detail-card">
+            <h4>Parking</h4>
+            <p><span class="label">Senior parking:</span> The spots right next to the restaurant are very limited and reserved for our senior guests.</p>
+            <p><span class="label">Main guest parking:</span> We've rented the lot at the nearby fire station (<a href="https://maps.app.goo.gl/D1mWvqARbNYwTX2fA" target="_blank">13808 Skyline Blvd, Woodside, CA 94062</a>), just a 3–5 minute walk to the venue. Please park there and take care walking over!</p>
+          </div>
+          <div class="detail-card">
+            <h4>Drinks & Getting Home</h4>
+            <p>Alcoholic beverages will be flowing throughout the reception and dance party. We want everyone to let loose and get home safely — please consider carpooling or taking an Uber/Lyft.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery" id="gallery">
+        <div class="sec-eyebrow">Gallery</div>
+        <h2 class="sec-h2" style="margin-bottom: 0.6rem">Our Story</h2>
+        <p class="gallery-subtitle">A few moments from our story</p>
+        <div class="gallery-grid" id="gallery-grid"></div>
+        <div style="text-align: center; margin-top: 2rem">
+          <button
+            onclick="openLightbox(0)"
+            style="
+              background: none;
+              border: none;
+              cursor: pointer;
+              font-family: 'Jost', sans-serif;
+              font-size: 0.72rem;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              color: #3a3530;
+              border-bottom: 1px solid #c8bfb2;
+              padding-bottom: 2px;
+            "
+          >
+            View more photos
+          </button>
+        </div>
+      </section>
+
+      <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <button class="lightbox-nav lightbox-prev" onclick="shiftLightbox(-1)">‹</button>
+        <img id="lightbox-img" src="" alt="Gallery photo" />
+        <button class="lightbox-nav lightbox-next" onclick="shiftLightbox(1)">›</button>
+      </div>
+
+      <section class="registry" id="registry">
+        <div class="sec-eyebrow">Registry</div>
+        <h2 class="sec-h2" style="margin-bottom: 0.6rem">Registry</h2>
+        <p class="registry-subtitle">
+          Your presence is the greatest gift. If you'd like to celebrate us
+          further, we're registered at the following:
+        </p>
+        <div class="registry-grid">
+          <div class="registry-card">
+            <h3>Amazon</h3>
+            <a class="reg-link" href="https://www.amazon.com/wedding/guest-view/23H1ME85F53AL" target="_blank">View Registry →</a>
+          </div>
+          <div class="registry-card">
+            <h3>Honeyfund</h3>
+            <a class="reg-link" href="https://account.venmo.com/u/Dasol_Chaerin" target="_blank">Send via Venmo →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="join-banner">
+        <div class="eyebrow">Join Us</div>
+        <h2>We can't wait to celebrate with you!</h2>
+      </section>
+
+      <footer>
+        <div class="footer-links">
+          <a onclick="scrollToSection('locations')">Venue</a>
+          <a onclick="scrollToSection('schedule')">Schedule</a>
+          <a onclick="scrollToSection('details')">Details</a>
+          <a onclick="scrollToSection('gallery')">Gallery</a>
+          <a onclick="scrollToSection('registry')">Registry</a>
+        </div>
+        <p>Dasol & Chaerin · October 3, 2026</p>
+      </footer>
+    </div>
+
+    <script>
+      var lightboxIndex = 0;
+      var photos = Array.from({ length: 34 }, function (_, i) {
+        return "./gallery/photo" + (i + 1) + ".jpg";
+      });
+
+      // Gallery — 6 random photos
+      var grid = document.getElementById("gallery-grid");
+      var shuffled = photos.slice().sort(function () {
+        return Math.random() - 0.5;
+      });
+      shuffled.slice(0, 6).forEach(function (src) {
+        var i = photos.indexOf(src);
+        var item = document.createElement("div");
+        item.className = "gallery-item";
+        item.onclick = function () { openLightbox(i); };
+        var img = document.createElement("img");
+        img.src = src;
+        img.alt = "Photo " + (i + 1);
+        img.onload = function () {
+          img.classList.add("loaded");
+          item.style.animation = "none";
+        };
+        item.style.transitionDelay = (i % 6) * 0.1 + "s";
+        var overlay = document.createElement("div");
+        overlay.className = "gallery-overlay";
+        item.appendChild(img);
+        item.appendChild(overlay);
+        grid.appendChild(item);
+      });
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll(".gallery-item").forEach(function (el) {
+        observer.observe(el);
+      });
+
+      // Countdown
+      var wedding = new Date("2026-10-03T12:00:00");
+      function tick() {
+        var diff = wedding - new Date();
+        if (diff <= 0) {
+          document.getElementById("countdown").innerHTML =
+            '<span style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:1.4rem;">Today is the day!</span>';
+          return;
+        }
+        var d = Math.floor(diff / 86400000),
+          h = Math.floor((diff % 86400000) / 3600000),
+          m = Math.floor((diff % 3600000) / 60000),
+          s = Math.floor((diff % 60000) / 1000);
+        document.getElementById("cd-days").textContent = d;
+        document.getElementById("cd-hours").textContent = String(h).padStart(2, "0");
+        document.getElementById("cd-mins").textContent = String(m).padStart(2, "0");
+        document.getElementById("cd-secs").textContent = String(s).padStart(2, "0");
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      function scrollToSection(id) {
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Lightbox
+      function openLightbox(i) {
+        lightboxIndex = i;
+        document.getElementById("lightbox-img").src = photos[i];
+        document.getElementById("lightbox").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeLightbox() {
+        document.getElementById("lightbox").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      function closeLightboxOutside(e) {
+        if (e.target === document.getElementById("lightbox")) closeLightbox();
+      }
+      function shiftLightbox(dir) {
+        lightboxIndex = (lightboxIndex + dir + photos.length) % photos.length;
+        document.getElementById("lightbox-img").src = photos[lightboxIndex];
+      }
+      document.addEventListener("keydown", function (e) {
+        if (!document.getElementById("lightbox").classList.contains("open")) return;
+        if (e.key === "ArrowLeft") shiftLightbox(-1);
+        if (e.key === "ArrowRight") shiftLightbox(1);
+        if (e.key === "Escape") closeLightbox();
+      });
+
+      var lightboxEl = document.getElementById("lightbox");
+      var touchStartX = 0, touchStartY = 0;
+      lightboxEl.addEventListener("touchstart", function (e) {
+        if (e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      lightboxEl.addEventListener("touchend", function (e) {
+        if (!lightboxEl.classList.contains("open")) return;
+        var dx = e.changedTouches[0].clientX - touchStartX,
+          dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) shiftLightbox(dx < 0 ? 1 : -1);
+      });
+    </script>
+  </body>
+</html>
